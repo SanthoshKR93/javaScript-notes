@@ -1,35 +1,38 @@
-CREATING ANIMATIONS
-*******************
 
-setInterval and clearInterval methods
--------------------------------------
+## CREATING ANIMATIONS
+
+### setInterval and clearInterval methods
 
 setInterval method is used to set a time interval at which a function given will execute.
 
 Syntax:
-      
+
+```      
        variable = setInterval(function_Name,time_in_milli_seconds)
-
-eg: 
+```
+#### example: 
   
+  ```
        var t = setInterval(func,500);
-
+```
 This means the function func() will get executed every 500 milli seconds.
 
 To stop such an execution at some point, clearTimer method is used.
 
 Syntax:
 
+```
       clearInterval(variable)
+```
+#### example:
 
-eg:
-
+```
       clearInterval(t);
+```
 
+#### code:
 
-code:
-----
-
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,24 +78,22 @@ setTimeout(anim,500);
 </script>
    </body>
 </html>
+```
+## HANDLING EVENTS
 
-
-
-HANDLING EVENTS
-***************
-
-EVENTS
-------
-Javascript allows us to execute codes when an event occurs.That event can be a mouseclick,on window load etc
+### EVENTS
+JavaScript allows us to execute codes when an event occurs.That event can be a mouse click,on window load etc
 So when an event occurs on the target element, a handler function is executed.
 The following are some of the events in js
 
 
--->onclick
+### onclick
 
 It occurs when a user clicks on an element.
 
-eg:
+#### example:
+
+```
 <html>
 <body>
 <button onclick="show()">Click Me</button>
@@ -103,11 +104,12 @@ function show() {
 </script>
 </body>        
 </html>
-
+```
 
 The handlers can also be assigned for elements.
-eg:
+#### example:
 
+```
 <html>
 	<body>
 		<button id="demo">Click Me</button>
@@ -120,40 +122,41 @@ document.body.innerHTML=Date();
 </script>
 </body>
 </html>
+```
 
-
--->onload and onunload
+### onload and onunload
 
 it occurs when a page loads up or unloads ie. when user opens or closes the page.
 
-eg:
+#### example:
 
-<body onload=dosomething()>
-</body>
+```
+<body onload=dosomething()></body>
 
 or
 
 window.onload=function(){
 }
-
+```
 For onunload
 
-<body onunload=dosomething()>
-</body>
+```
+<body onunload=dosomething()></body>
 
 or
 
 window.onunload=function(){
 }
+```
 
 
-
--->onchange
+### onchange
 
 The handler executes a function or piece of code when the content of the element changes.These are mostly used in the case of text-boxes.
 
-eg: converts the lowercase characters to uppercase when the textbox loses focus ie. onchange.
+<b>Example:</b> converts the lowercase characters to uppercase when the textbox loses focus ie. onchange.
 
+```
 <html>
 <body>
 <input type="text" id="box" onchange="upcase()">
@@ -166,15 +169,16 @@ a.value=a.value.toUpperCase();
 </script>
 </body>
 </html>
+```
 
-
--->onmouseover and onmouseout
+### onmouseover and onmouseout
 
 onmouseover means when the mouse is moved over the element.
 onmouseout means when the mouse that is moved on to the element is moved out of the element.
 
-eg
+#### example:
 
+```
 <!DOCTYPE html>
 <html>
 <body>
@@ -191,15 +195,16 @@ x.style.height="40px";
 </script>
 </body>
 </html>
+```
 
-
--->onmousedown and onmouseup
+### onmousedown and onmouseup
 
 onmousedown event means when we click and hold on an element its handler function executes.
 onmouseup event means when we release a mouse click on an element, its handler function executes.
 
-eg:
+#### example:
 
+```
 <!DOCTYPE html>
 <html>
 <body>
@@ -215,16 +220,17 @@ document.getElementById("mo").style.color="green";
 </script>
 </body>
 </html>
+```
 
+### onblur, onfocus and oninput
 
---> onblur, onfocus and oninput
+- <b>onfocus-</b> when an element is selected, thehandler function is executed.
+- <b>onblur-</b>  when an element is unselected or when it loses the focus, the handler function is executed.
+- <b>oninput-</b> when an input is given to an element, for eg: a text-box, when input is given, the handler function is executed.
 
-onfocus- when an element is selected, thehandler function is executed.
-onblur-  when an element is unselected or when it loses the focus, the handler function is executed.
-oninput- when an input is given to an element, for eg: a text-box, when input is given, the handler function is executed.
+#### example: 
 
-eg: 
-
+```
 <!DOCTYPE html>
 <html>
 <body>
@@ -249,14 +255,15 @@ document.getElementById("name").innerHTML="WHAT YOU HAVE WRITTEN SO FAR:" + y;
 
 </body>
 </html>
+```
+### onkeyup and onkeydown
 
-
---> onkeyup and onkeydown
-
-onkeyup- this event occurs with a keystroke, ie. when we type a character in an text-box, on keyup, the handler function is executed.
+- <b>onkeyup-</b> this event occurs with a keystroke, ie. when we type a character in an text-box, on keyup, the handler function is executed.
 onkeydown - this event occurs with a keystroke, ie. when we type a character in an text-box, on keydown, the handler function is executed.
 
-eg:
+#### example:
+
+```
 <!DOCTYPE html>
 <html>
 <body>
@@ -278,36 +285,38 @@ document.getElementById("disp").innerHTML="What you've typed so far:" + b;
 </script>
 </body>
 </html>
+```
+## EVENT LISTENERS
 
-EVENT LISTENERS
----------------
-
---> addEventListener()
+### addEventListener()
 
 Adding events to an element without making any changes to the current assigned events.
 
 Syntax:
 
+```
        element.addEventListener("event",function_name,useCapture);
-
+```
 where, event is the event to be added,
 function is the handler function to be executed when the event occurs, 
 useCapture is the boolean value given (default value is false) for event bubbling or event capturing.
 
 NOTE: Here when giving an event to be added, the event name is enough 'on'prefix is not needed.
 
---> removeEventListener()
+### removeEventListener()
    
 Used for removing events assigned to an element.
 
 Syntax:
 
+```
         element.removeEventListener("event",function_name);
-
+```
 where event is the event to be removed and function is the handler function assigned at the time of adding the event to the element.
 
-eg:
+#### example:
 
+```
 <!DOCTYPE html>
 <html>
 <body>
@@ -322,32 +331,29 @@ a.removeEventListener("click",click);
 </script>
 </body>
 </html>
-
-
-
-EVENT PROPAGATION
-*****************
+```
+### EVENT PROPAGATION
 Event Propagation along the parent and child elements are determined using useCapture.
 This is used when, there are 2 elements where one element is parent of other, and both of them have events assigned to them, then the useCapture value determines which element's event must be handled first.
 there are 2 types :
-
-       element.addEventListener("event",function_name,useCapture);       
-
--->Event Bubbling
+ 
+```
+element.addEventListener("event",function_name,useCapture);       
+```
+- <b>Event Bubbling</b>
 In event Bubbling, the useCapture value is false.
 This means the inner element's event must be handled first.
 
-
--->Event Capturing
+- <b>Event Capturing</b>
 In event capturing, the useCapture value is true.
 This means the outer element's event must be handled first.
 
 
 NOTE: The use capture value is false by default.
 
-eg: Event Capturing
--------------------
+#### example : Event Capturing
 
+```
 <!DOCTYPE html>
 <html>
 <body>
@@ -369,13 +375,15 @@ alert("child handled second");
 </script>
 </body>
 </html>
+```
 
-res-->
+```
+result :
 parent is handled first then the child. div element first and then p element.
+```
+#### example: Event Bubbling
 
-eg: Event Bubbling
-------------------
-
+```
 <!DOCTYPE html>
 <html>
 <body>
@@ -397,20 +405,21 @@ alert("child handled first");
 </script>
 </body>
 </html>
+```
 
+```
 res-->
 child is handled first then the parent. 'p' element first and then div element.
+```
+
+<b>NOTE:</b> Bubbling goes 'UP' the DOM and Capturing goes 'DOWN' the DOM
 
 
-NOTE: Bubbling goes 'UP' the DOM and Capturing goes 'DOWN' the DOM
+## CREATING AN IMAGE SLIDER
 
+#### CODE:
 
-CREATING AN IMAGE SLIDER
-************************
-
-CODE:
-----
-
+```
 <html>
   <head>
     <title>
@@ -464,15 +473,14 @@ CODE:
     </script>
   </body>
 </html>
-
-
-FORM VALIDATION
-***************
+```
+## FORM VALIDATION
 
 A small example code for showing form validation.
 
-code:
+#### code:
 
+```
 <html>
 
   <head>
@@ -506,6 +514,6 @@ code:
   
   </body>
 </html>
-
+```
 
 
