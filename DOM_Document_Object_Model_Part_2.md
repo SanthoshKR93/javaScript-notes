@@ -259,7 +259,7 @@ document.getElementById("name").innerHTML="WHAT YOU HAVE WRITTEN SO FAR:" + y;
 ### onkeyup and onkeydown
 
 - <b>onkeyup-</b> this event occurs with a keystroke, ie. when we type a character in an text-box, on keyup, the handler function is executed.
-onkeydown - this event occurs with a keystroke, ie. when we type a character in an text-box, on keydown, the handler function is executed.
+- <b>onkeydown</b> - this event occurs with a keystroke, ie. when we type a character in an text-box, on keydown, the handler function is executed.
 
 #### example:
 
